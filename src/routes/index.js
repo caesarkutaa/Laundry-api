@@ -6,11 +6,12 @@ const rootRouter = Router();
 
 const userRouter = require("./user.routes")
 const laundryItemRouter = require("./laundry.routes")
+const orderRouter = require("./order.routes")
 const auth = require("../middleware/authentication")
 
 rootRouter.use("/user", userRouter);
 rootRouter.use("/laundry",auth, laundryItemRouter);
-
+rootRouter.use("/order",auth,orderRouter)
 
 
 app.use(function (req, res) {
