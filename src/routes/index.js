@@ -5,8 +5,11 @@ const rootRouter = Router();
 
 
 const userRouter = require("./user.routes")
+const laundryItemRouter = require("./laundry.routes")
+const auth = require("../middleware/authentication")
 
 rootRouter.use("/user", userRouter);
+rootRouter.use("/laundry",auth, laundryItemRouter);
 
 
 
