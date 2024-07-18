@@ -30,6 +30,7 @@ transporter.verify((err, success) => {
     }
 });
 
+
 // Register user
 const createUser = async (req, res) => {
     const { email } = req.body;
@@ -50,7 +51,7 @@ const createUser = async (req, res) => {
         });
         
         // Create a wallet for the new user
-        await walletController.createWalletForUser(user._id);
+        await walletController.createWallet(user._id);
 
         // Generate a verification token with the user's ID
         const verificationToken = user.createjwt();
@@ -78,6 +79,11 @@ const createUser = async (req, res) => {
         return res.status(500).send({ message: 'Server error' });
     }
 };
+
+module.exports = {
+    createUser
+};
+
 
 
 // login user

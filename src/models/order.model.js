@@ -31,7 +31,6 @@ const OrderSchema = new Schema({
   },
   pickupDate: {
     type: Date,
-    required: true
   },
   deliveryDate: {
     type: Date
@@ -43,3 +42,4 @@ const OrderSchema = new Schema({
 });
 
 module.exports = mongoose.model('Order', OrderSchema);
+
