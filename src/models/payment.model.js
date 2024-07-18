@@ -18,7 +18,7 @@ const PaymentSchema = new Schema({
   },
   method: {
     type: String,
-    enum: ['Credit Card', 'Debit Card', 'PayPal', 'Cash'],
+    enum: ['Credit Card', 'Debit Card', 'PayPal', 'Cash', 'Wallet'],
     required: true
   },
   status: {
@@ -36,3 +36,4 @@ const PaymentSchema = new Schema({
 });
 
 module.exports = mongoose.model('Payment', PaymentSchema);
+
